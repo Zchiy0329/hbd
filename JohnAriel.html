@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="user-info">
+        <div class="profile">
+          <div class="profile-img">
+            <img src="thumbnails/profile.jpg" class="cover" alt="">
+          </div>
+          <h3>leizyaerial1</h3>
+        </div>
+        <div>
+          <div class="settings"></div>
+        </div>
+      </div>
+      <div class="img">
+        <img src="thumbnails/post.jpeg" class="cover" alt="">
+      </div>
+      <div class="buttons">
+        <img class="heart" id="play" src="thumbnails/d1bd.png" alt="heart" onclick="main();" >
+        <img class="icon" src="thumbnails/h5ft.png" alt="">
+        <img class="icon" src="thumbnails/9y56.png" alt="">
+      </div>
+      <h4 class="likes">3,142 likes</h4>
+
+      <h4 class="message"><b>leizyaerial1</b>
+        Happy birthday, Alii! Wishing you a day as beautiful as you are. Enjoy every moment! 🎉🎈</h4>
+    </div>
+
+  <div class="popup" id="popup">
+    <div class="close-btn-container">
+      <button class="close-btn" onclick="closePopup();" id="stop">x</button>
+    </div>
+
+      <div class="pop-container">
+        <img src="thumbnails/love.png" alt="">
+        <h2>Hi Nayeon</h2>
+        <p>"Ganda Ganda mo Always!"</p>
+        <button type="button" onclick="link()">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 40" x="0px" y="0px"><path d="m27.0827,26.0538c2.9867-2.336,4.9173-5.9947,4.9173-10.0907,0-7.072-5.728-12.8-12.8-12.8S6.4,8.8911,6.4,15.9631s5.728,12.8,12.8,12.8c.8854,0,1.7493-.0854,2.5813-.256.5547.6507,1.312,1.2906,2.3147,1.76,2.7626,1.3227,5.3013.4053,5.7386.2347-.416-.2987-2.4426-1.856-2.752-4.448Zm-15.3493-8.4907c-.8854,0-1.6-.7146-1.6-1.6s.7146-1.6,1.6-1.6,1.6.7146,1.6,1.6-.7146,1.6-1.6,1.6Zm7.4667,0c-.8854,0-1.6-.7146-1.6-1.6s.7146-1.6,1.6-1.6,1.6.7146,1.6,1.6-.7146,1.6-1.6,1.6Zm7.4667,0c-.8854,0-1.6-.7146-1.6-1.6s.7146-1.6,1.6-1.6,1.6.7146,1.6,1.6-.7146,1.6-1.6,1.6Z"/><path d="m9.7813,26.8324c-.4906.4907-1.1093.9493-1.8773,1.3013-2.7626,1.3227-5.3013.4053-5.7386.2347.416-.2987,2.4426-1.856,2.752-4.448C1.9307,21.5844,0,17.9258,0,13.8297,0,6.7577,5.728,1.0297,12.8,1.0297c1.472,0,2.88.2453,4.192.704-6.8907,1.0667-12.192,7.04-12.192,14.2294,0,4.3413,1.9307,8.2346,4.9813,10.8693Z"/><text x="0" y="47" fill="#FFFFFF" font-size="5px" font-weight="bold" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif">Created by Asep Widarna</text><text x="0" y="52" fill="##FFFFFF" font-size="5px" font-weight="bold" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif">from the Noun Project</text></svg>
+        </button>
+      </div>
+  </div>
+</div>
+
+<div class="alert">
+  <button class="alert-btn" onclick="alertMessage();" id="play2">haha</button>
+</div>
+
+  <script>
+    function likeButton() {
+      let heart = document.querySelector('.heart');
+      let likes = document.querySelector('.likes');
+
+      if(heart.src.match("thumbnails/d1bd.png") ) {
+        heart.src = "heart.png";
+        likes.innerHTML = "3,143 likes";
+      } else {
+        heart.src = "thumbnails/d1bd.png";
+        likes.innerHTML = "3,142 likes";
+      }
+    }
+
+    let popup = document.getElementById('popup');
+
+    function openPopup() {
+      popup.classList.add("open-popup");
+    }
+
+    function closePopup() {
+      popup.classList.remove("open-popup");
+    }
+
+    function link() {
+      window.open("https://www.messenger.com/t/100080994943275");
+    }
+
+    let audio = null;
+    let playButton = document.getElementById("play");
+    let stopButton = document.getElementById("stop");
+
+    let play2Button = document.getElementById("play2");
+
+    playButton.addEventListener("click", playMusic);
+    stopButton.addEventListener("click", stopMusic);
+    play2button.addEventListener("click",playMusic2);
+
+    function playMusic() {
+      audio = new Audio("thumbnails/hbd.mp3");
+      audio.play();
+    }
+
+    function playMusic2() {
+      audio2 = new Audio("thumbnails/Fallen.mp3");
+      audio2.play();
+    }
+
+    function stopMusic() {
+      if (audio) {
+        audio.pause();
+        audio.currentTime = 0;
+        audio = null;
+      }
+    }
+
+function alertMessage() {
+  playMusic2();
+  setTimeout(function() {
+    alert("Hi Ali gusto ko lang iexpress 'tong Feelings ko sayo");             
+    alert("nag start ang feelings ko sayo out of nowhere.");
+    alert("ngayon lang ako nagkalakas ng loob na mag confess.");
+    alert("that time akala ko happy crush lang kita kaso iba eh gusto na talaga as in gustong ipursue.");
+    alert("gusto kita ligawan Ali pero");
+    alert("ayaw ko makuha sagot mo kung payag ka or hindi");
+    alert("basta hayaan mo lang ako na ipakita na gusto talaga kita");
+    alert("no need to reciprocate my feelings.");
+    alert("If hindi kapa ready i understand naman pero just let me admire u");
+    alert("show my pure intentions to u.");
+    alert(" dont mind me, no pressure.");
+    alert("hayaan mong gustuhin kita hanggang sa ma convey ko 'tong feelings ko sayo.");
+    alert("wag ka mag alala hindi ako naghihintay ng ano mang sagot");
+    alert("kung talagang hindi pa ka ready,");
+    alert("gusto ko lang gustuhin ka.");
+    alert("sana after this confession maging comfortable kapa rin sakin");
+    alert("and we can still be friends.");
+    alert("-Ariel (⁠｡⁠♡⁠‿⁠♡⁠｡⁠)");
+  }, 2000); // Delay the alerts by 1 second (adjust the delay as needed)
+}
+
+    function main() {
+      likeButton();
+      setTimeout(openPopup,3000);
+    }
+
+  </script>
+</body>
+</html>
